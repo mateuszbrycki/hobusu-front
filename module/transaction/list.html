@@ -1,0 +1,20 @@
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th ng-click="orderByField='id'; reverseSort=!reverseSort">Id</th>
+            <th ng-click="orderByField='date'; reverseSort=!reverseSort">Date</th>
+            <th ng-click="orderByField='amount'; reverseSort=!reverseSort">Amount</th>
+            <th ng-click="orderByField='category'; reverseSort=!reverseSort">Category</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="transaction in transactions|orderBy:orderByField:reverseSort"
+            ng-class="transaction.type == 'INCOME' ? 'success' : 'warning'">
+            <td>{{ transaction.id }}</td>
+            <td>{{ transaction.date }}</td>
+            <td>{{ transaction.amount }}</td>
+            <td>{{ transaction.category.name }}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,7 @@
+{
+  "name": "hobusu",
+  "version": "0.0.0",
+  "description": "HOme-BUdget-SUpervisor",
+  "main": "js/server.js",
+  "author": "Mateusz Brycki"
+}
