@@ -1,4 +1,4 @@
-<div class="user-form-panel col-md-6" ng-controller="LoginController">
+<div class="user-form-panel col-md-6" ng-controller="LoginController" ng-if="!logged">
     <div class="row">
         <h1 style="align-content: center">Login form</h1>
     </div>
@@ -24,7 +24,7 @@
     </div>
 </div>
 
-<div class="user-form-panel col-md-6" ng-controller="RegistrationController">
+<div class="user-form-panel col-md-6" ng-controller="RegistrationController" ng-if="!logged">
     <div class="row">
         <h1 style="align-content: center">Register form</h1>
     </div>

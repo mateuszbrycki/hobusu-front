@@ -3,15 +3,11 @@
     <title>Hobusu</title>
     <base href="/">
 
-    <script
-            src="https://code.jquery.com/jquery-3.1.1.js"
-            integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
-            crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/style.css">
 
+    <script src="js/jquery-3.1.1.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/angular/angular.min.js"></script>
     <script src="js/angular/angular-route.min.js"></script>
@@ -20,21 +16,16 @@
 </head>
 <body ng-controller="MainController">
 
-<ul class="nav navbar-nav navbar-default navbar-fixed-top">
-    <li ng-hide="logged"><a ng-href="/login">Login</a></li>
-    <li ng-hide="logged"><a ng-href="/register">Register</a></li>
-    <li ng-hide="!logged"><a ng-href="/transactions">Transactions</a></li>
-    <li ng-hide="!logged"><a ng-href="/logout">Logout</a></li>
-</ul>
+<div ng-include src="'/module/main/navbar.html'" ng-if="logged"></div>
 
 <div class="container">
 
-    <p>{{ logged == true}}</p>
+    <div ng-include="" src="'/module/dashboard/main.html'" ng-if="logged"></div>
 
     <div data-ng-view="" style="height: 100%"></div>
 
-
     <script src="module/configuration/configuration.js"></script>
+    <script src="module/account/service/session.js"></script>
     <script src="module/main/main.js"></script>
     <script src="module/account/login.js"></script>
     <script src="module/account/register.js"></script>
