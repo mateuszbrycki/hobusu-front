@@ -1,5 +1,16 @@
-
-
 <h1>Hobusu dasboard</h1>
 
 <div ng-include src="'/module/transaction/list.html'"></div>
+
+
+<div ng-controller="LineCtrl">
+    <canvas id="line"
+            class="chart chart-line"
+            chart-data="data"
+            chart-labels="labels"
+            chart-series="series"
+            chart-options="options"
+            chart-dataset-override="datasetOverride"
+            chart-click="onClick">
+    </canvas>
+</div>
