@@ -1,0 +1,36 @@
+<html ng-app="hobusu">
+<head>
+    <title>Hobusu</title>
+    <base href="/">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular/angular.min.js"></script>
+    <script src="js/angular/angular-route.min.js"></script>
+    <script src="js/angular/angular-cookies.min.js"></script>
+
+</head>
+<body ng-controller="MainController">
+
+<div ng-include src="'/module/main/navbar.html'" ng-if="logged"></div>
+
+<div class="container">
+
+    <div ng-include="" src="'/module/dashboard/main.html'" ng-if="logged"></div>
+
+    <div data-ng-view="" style="height: 100%"></div>
+
+    <script src="module/configuration/configuration.js"></script>
+    <script src="module/account/service/session.js"></script>
+    <script src="module/main/main.js"></script>
+    <script src="module/account/login.js"></script>
+    <script src="module/account/register.js"></script>
+    <script src="module/account/logout.js"></script>
+    <script src="module/transaction/transaction.js"></script>
+</div>
+</body>
+</html>
