@@ -1,16 +1,45 @@
 <h1>Hobusu dasboard</h1>
 
-<div ng-include src="'/module/transaction/list.html'"></div>
+<div class="row">
+    <div ng-include src="'/module/transaction/list.html'" class="col-md-6"></div>
 
 
-<div ng-controller="LineCtrl">
-    <canvas id="line"
-            class="chart chart-line"
-            chart-data="data"
-            chart-labels="labels"
-            chart-series="series"
-            chart-options="options"
-            chart-dataset-override="datasetOverride"
-            chart-click="onClick">
-    </canvas>
+    <div ng-controller="LineCtrl" class="account-summary-chart col-md-6">
+        <canvas id="line"
+                class="chart chart-line"
+                chart-data="data"
+                chart-labels="labels"
+                chart-series="series"
+                chart-options="options"
+                chart-dataset-override="datasetOverride"
+                chart-click="onClick">
+        </canvas>
+    </div>
+
+</div>
+
+<div class="row">
+    <div ng-controller="LineCtrl" class="account-summary-chart col-md-6">
+        <canvas id="line"
+                class="chart chart-line"
+                chart-data="data"
+                chart-labels="labels"
+                chart-series="series"
+                chart-options="options"
+                chart-dataset-override="datasetOverride"
+                chart-click="onClick">
+        </canvas>
+    </div>
+
+    <div ng-controller="LineCtrl" class="account-summary-chart col-md-6">
+        <canvas id="line"
+                class="chart chart-line"
+                chart-data="data"
+                chart-labels="labels"
+                chart-series="series"
+                chart-options="options"
+                chart-dataset-override="datasetOverride"
+                chart-click="onClick">
+        </canvas>
+    </div>
 </div>
