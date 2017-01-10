@@ -2,10 +2,10 @@
 <table class="table" ng-controller="TransactionController">
     <thead class="tbl-header">
         <tr>
-            <th ng-click="orderByField='id'; reverseSort=!reverseSort">Date</th>
-            <th ng-click="orderByField='date'; reverseSort=!reverseSort">Amount</th>
-            <th ng-click="orderByField='amount'; reverseSort=!reverseSort">Category</th>
-            <th ng-click="orderByField='category'; reverseSort=!reverseSort">Description</th>
+            <th ng-click="orderByField='date'; reverseSort=!reverseSort">Date</th>
+            <th ng-click="orderByField='amount'; reverseSort=!reverseSort">Amount</th>
+            <th ng-click="orderByField='category.name'; reverseSort=!reverseSort">Category</th>
+            <th ng-click="orderByField='description'; reverseSort=!reverseSort">Description</th>
         </tr>
     </thead>
     <tbody>
