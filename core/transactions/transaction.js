@@ -39,11 +39,11 @@ hobusu.controller('TransactionController', function ($scope, $http, transactionC
     };
 
     $scope.add = function (transaction) {
-        /*$http.post(API_ADDRESS + "/transaction", transaction)
+        $http.post(API_ADDRESS + "/transaction", transaction)
          .then(function (response) {
-         $scope.$broadcast('transactionListUpdate');
-         });*/
-        console.log(transaction);
+
+            $scope.$broadcast('transactionListUpdate');
+         });
     };
 
 });
