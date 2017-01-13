@@ -1,5 +1,5 @@
 
-<table class="table" ng-controller="TransactionController">
+<table class="table" ng-controller="TransactionController" ng-init="get()">
     <thead class="tbl-header">
         <tr>
             <th ng-click="orderByField='date'; reverseSort=!reverseSort">Date</th>
