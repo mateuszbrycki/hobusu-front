@@ -1,7 +1,7 @@
 var API_ADDRESS = "http://localhost:9000";
 var AUTHORIZATION_TOKEN = "token";
 
-var hobusu = angular.module('hobusu', ['ngRoute', 'ngCookies', 'chart.js']);
+var hobusu = angular.module('hobusu', ['ngRoute', 'ngCookies', 'chart.js', 'ngValidate']);
 
 hobusu.config(function ($routeProvider) {
     $routeProvider

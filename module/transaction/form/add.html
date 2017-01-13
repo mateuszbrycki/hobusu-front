@@ -1,0 +1,37 @@
+<div ng-controller="TransactionController">
+    <h2>Add transaction</h2>
+    <form role="form" id="add-transaction-form" ng-validate="validateOptions">
+
+        <!-- category -->
+        <div class="form-group">
+            <label class="sr-only" for="category">Category</label>
+            <select ng-model="transaction.category" class="" name="form-category" id="category">
+                <option ng-repeat="category in categories" value="{{category.id}}">{{category.name}}</option>
+            </select>
+        </div>
+
+        <!-- amount -->
+        <div class="form-group">
+            <label class="sr-only" for="amount">Amount</label>
+            <input type="text" ng-model="transaction.amount" name="amount"
+                   placeholder="Amount..." class="form-control" id="amount">
+        </div>
+
+        <!-- date -->
+        <div class="form-group">
+            <label class="sr-only" for="date">Date</label>
+            <input type="text" ng-model="transaction.date" name="date" class="form-control" id="date"
+                   placeholder="Date...">
+        </div>
+
+
+        <!-- description -->
+        <div class="form-group">
+            <label class="sr-only" for="description">Description</label>
+            <input type="text" ng-model="transaction.description" name="description"
+                   placeholder="Description..." class="form-control" id="description">
+        </div>
+
+        <button type="submit" class="btn" ng-click="add(transaction)">Add</button>
+    </form>
+</div>
