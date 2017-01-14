@@ -10,14 +10,10 @@ hobusu.controller('CategoryMonthlySummary', function ($scope, $http) {
             $scope.labels = [];
             $scope.data = [];
 
-            for (var property in data.data) {
-                if (data.data.hasOwnProperty(property)) {
-                    $scope.labels.push(property);
-                    $scope.data.push(data.data[property]);
-                }
+            for (var entry in data.data) {
+                $scope.labels.push(data.data[entry].category.name);
+                $scope.data.push(data.data[entry].amount);
             }
-
-
         });
 
 
