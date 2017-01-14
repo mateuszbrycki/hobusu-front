@@ -35,18 +35,27 @@ hobusu.config(function ($locationProvider) {
     });
 });
 
-hobusu.factory('authenticationFactory', function (SessionService) {
+hobusu.factory('authenticationFactory', function ($q, $rootScope, SessionService) {
     return {
-        request: function (config) {
+        'request' : function (config) {
 
             if (SessionService.isLogged()) {
                 config.headers.authorization = SessionService.getToken();
             }
 
             return config;
+        },
+        'responseError': function(rejection) {
+            if(rejection.status === 401) {
+                SessionService.clearToken();
+                $rootScope.logged = SessionService.isLogged();
+            }
+
+            return $q.reject(rejection);
         }
     };
 });
+
 
 hobusu.config(function ($httpProvider) {
     $httpProvider.interceptors.push('authenticationFactory');
