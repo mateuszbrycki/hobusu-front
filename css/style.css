@@ -310,3 +310,11 @@ section{
 .dashboard-chart {
     align-content: center;
 }
+
+.delete-transaction {
+    display: none;
+}
+
+.transaction-list-row:hover .delete-transaction{
+    display: block;
+}

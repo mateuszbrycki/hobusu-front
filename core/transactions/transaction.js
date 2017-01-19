@@ -50,4 +50,11 @@ hobusu.controller('TransactionController', function ($scope, $rootScope, $http, 
          });
     };
 
+    $scope.delete = function(id) {
+        $http.delete(API_ADDRESS + "/transaction/" + id)
+            .then(function(response) {
+                $rootScope.$broadcast('transactionListUpdate');
+            });
+    }
+
 });
