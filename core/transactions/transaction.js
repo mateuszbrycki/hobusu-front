@@ -1,4 +1,4 @@
-hobusu.controller('TransactionController', function ($scope, $http, transactionCategoryService) {
+hobusu.controller('TransactionController', function ($scope, $rootScope, $http, transactionCategoryService) {
 
     $scope.orderByField = 'date';
     $scope.reverseSort = true;
@@ -27,22 +27,26 @@ hobusu.controller('TransactionController', function ($scope, $http, transactionC
         $scope.categories = data;
     });
 
-    $scope.$on('transactionListUpdate', function () {
+    //update transactions list after adding new
+    $rootScope.$on('transactionListUpdate', function () {
         $scope.get();
     });
 
     $scope.get = function () {
         $http.get(API_ADDRESS + "/transaction")
             .then(function (data, status, headers, config) {
-                $scope.transactions = data.data;
+                $rootScope.transactions = data.data;
             });
     };
 
     $scope.add = function (transaction) {
         $http.post(API_ADDRESS + "/transaction", transaction)
          .then(function (response) {
+            $rootScope.$broadcast('transactionListUpdate');
 
-            $scope.$broadcast('transactionListUpdate');
+             //refresh form
+             $("#add-transaction-form").trigger("reset");
+             $("#add-transaction-form").validate().resetForm();
          });
     };
 
