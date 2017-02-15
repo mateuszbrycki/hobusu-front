@@ -32,6 +32,13 @@ hobusu.controller('TransactionController', function ($scope, $rootScope, $http, 
         $scope.get();
     });
 
+    //update transactions categories list after adding new
+    $rootScope.$on('transactionCategoryListUpdate', function () {
+        transactionCategoryService.getList().then(function (data) {
+            $scope.categories = data;
+        });
+    });
+
     $scope.get = function () {
         $http.get(API_ADDRESS + "/transaction")
             .then(function (data, status, headers, config) {

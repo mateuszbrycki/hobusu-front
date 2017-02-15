@@ -10,3 +10,20 @@ hobusu.service('transactionCategoryService', function ($http) {
    };
 
 });
+
+hobusu.controller('TransactionCategoryController', function ($scope, $rootScope, $http) {
+
+    $scope.add = function (transactionCategory) {
+
+        $http.post(API_ADDRESS + "/category", transactionCategory)
+            .then(function (response) {
+                $rootScope.$broadcast('transactionCategoryListUpdate');
+
+                //refresh form
+                $("#add-transaction-category-form").trigger("reset");
+                $("#add-transaction-category-form").validate().resetForm();
+            });
+    };
+
+
+});
