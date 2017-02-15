@@ -1,5 +1,4 @@
-//TODO mbrycki refactor charts
-hobusu.controller("AccountBalance", function ($scope, $rootScope, $http) {
+hobusu.controller("AccountDailySummary", function ($scope, $rootScope, $http) {
 
     $scope.get = function() {
         $http.get(API_ADDRESS + "/statistic/account/balance")
