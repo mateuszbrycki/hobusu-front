@@ -40,7 +40,7 @@ hobusu.controller('TransactionController', function ($scope, $rootScope, $http, 
     });
 
     $scope.get = function () {
-        $http.get(API_ADDRESS + "/transaction")
+        $http.get(API_ADDRESS + "/transaction/limit/15")
             .then(function (data, status, headers, config) {
                 $rootScope.transactions = data.data;
             });

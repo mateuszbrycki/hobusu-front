@@ -1,0 +1,33 @@
+<h1>Month statistics</h1>
+<div ng-controller="TransactionMonthController">
+<h2>Transactions</h2>
+
+<!-- category -->
+<div class="form-group" ng-init="availableMonths()">
+    <label class="sr-only" for="month">Month</label>
+    <select ng-model="selectedMonth" class="" name="form-category" id="month" ng-change="update()">
+        <option ng-repeat="month in availableMonthsData" value="{{month.yearMonth}}">{{month.yearMonth}}</option>
+    </select>
+</div>
+
+<table class="table" ng-init="list()">
+    <thead class="tbl-header">
+    <tr>
+        <th ng-click="orderByField='date'; reverseSort=!reverseSort">Date</th>
+        <th ng-click="orderByField='amount'; reverseSort=!reverseSort">Amount</th>
+        <th ng-click="orderByField='category.name'; reverseSort=!reverseSort">Category</th>
+        <th ng-click="orderByField='description'; reverseSort=!reverseSort">Description</th>
+        <th style="width: 3%;"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="transaction in transactions|orderBy:orderByField:reverseSort" class="transaction-list-row">
+        <td>{{ transaction.date }}</td>
+        <td>{{ transaction.amount | number:2}}</td>
+        <td>{{ transaction.category.name }}</td>
+        <td>{{ transaction.description }}</td>
+        <td><span class="glyphicon glyphicon-remove delete-transaction" ng-click="delete(transaction.id)"></span></td>
+    </tr>
+    </tbody>
+</table>
+</div>
