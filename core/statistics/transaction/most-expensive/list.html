@@ -1,0 +1,21 @@
+<h2>Last 10 most expensive transactions</h2>
+<table class="table" ng-controller="MostExpensiveTransactionController" ng-init="get()">
+    <thead class="tbl-header">
+    <tr>
+        <th ng-click="orderByField='date'; reverseSort=!reverseSort">Date</th>
+        <th ng-click="orderByField='amount'; reverseSort=!reverseSort">Amount</th>
+        <th ng-click="orderByField='category.name'; reverseSort=!reverseSort">Category</th>
+        <th ng-click="orderByField='description'; reverseSort=!reverseSort">Description</th>
+        <th style="width: 3%;"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="transaction in mostExpensiveTransactions|orderBy:orderByField:reverseSort" class="transaction-list-row">
+        <td>{{ transaction.date }}</td>
+        <td>{{ transaction.amount | number:2}}</td>
+        <td>{{ transaction.category.name }}</td>
+        <td>{{ transaction.description }}</td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
