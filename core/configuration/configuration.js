@@ -6,22 +6,15 @@ var hobusu = angular.module('hobusu', ['ngRoute', 'ngCookies', 'chart.js', 'ngVa
 hobusu.config(function ($routeProvider) {
     $routeProvider
         .when('/', {
-            templateUrl: "/core/account/forms.html"
+            templateUrl: "/core/dashboard/main.html"
         })
-        /*.when('/login', {
-         templateUrl: "/module/account/forms.html"
-         })
-         .when('/register', {
-         templateUrl: "/module/account/forms.html"
-         })*/
+        .when('/month', {
+            templateUrl: "/core/dashboard-month/main.html"
+        })
         .when('/logout', {
             templateUrl: "/core/account/forms.html",
             controller: "LogoutController"
         })
-        /*.when('/transactions', {
-         templateUrl: "/module/transaction/list.html",
-         controller: "TransactionController"
-         })*/
         .otherwise({
             redirectTo: '/'
         })

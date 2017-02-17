@@ -30,9 +30,9 @@
 
 <div class="container">
 
-    <div ng-include="" src="'/core/dashboard/main.html'" ng-if="logged"></div>
+    <div ng-include="" src="'/core/account/forms.html'"></div>
 
-    <div data-ng-view="" style="height: 100%"></div>
+    <div data-ng-view="" style="height: 100%" ng-if="logged"></div>
 
     <script src="core/configuration/configuration.js"></script>
     <script src="core/account/service/session.js"></script>
@@ -42,6 +42,7 @@
     <script src="core/account/logout.js"></script>
     <script src="core/categories/category.js"></script>
     <script src="core/transactions/transaction.js"></script>
+    <script src="core/transactions/transaction-month.js"></script>
     <script src="core/statistics/category/monthly-summary/categoryMonthlySummary.js"></script>
     <script src="core/statistics/account/daily-summary/accountBalance.js"></script>
     <script src="core/statistics/account/monthly-summary/accountMonthlySummary.js"></script>
