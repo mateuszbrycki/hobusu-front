@@ -318,3 +318,10 @@ section{
 .transaction-list-row:hover .delete-transaction{
     display: block;
 }
+
+.dashboard-element {
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px;
+    border: #f0f0f0 1px solid;
+}

@@ -1,17 +1,11 @@
 <h1>Hobusu dasboard</h1>
 
-<div class="row">
-    <div ng-include src="'/core/transactions/transactions-list/list.html'" class="col-md-6"></div>
-    <div ng-include src="'/core/transactions/transactions-add/add.form.html'" class="col-md-6"></div>
-    <div ng-include src="'/core/categories/categories-add/add.form.html'" class="col-md-6"></div>
-</div>
+    <div ng-include src="'/core/transactions/transactions-list/list.html'" class="col-md-5 dashboard-element"></div>
+    <div ng-include src="'/core/transactions/transactions-add/add.form.html'" class="col-md-5 dashboard-element"></div>
+    <div ng-include src="'/core/categories/categories-add/add.form.html'" class="col-md-5 dashboard-element"></div>
+    <div ng-include src="'/core/statistics/account/daily-summary/chart.view.html'" class="col-md-5 dashboard-element"></div>
+    <div ng-include src="'/core/statistics/category/monthly-summary/chart.view.html'" class="col-md-5 dashboard-element"></div>
+    <div ng-include src="'/core/statistics/transaction/most-expensive/list.html'" class="col-md-5 dashboard-element"></div>
+    <div ng-include src="'/core/statistics/account/monthly-summary/chart.view.html'" class="col-md-5 dashboard-element"></div>
 
-<div class="row">
-    <div ng-include src="'/core/statistics/category/monthly-summary/chart.view.html'" class="col-md-6"></div>
-    <div ng-include src="'/core/statistics/account/daily-summary/chart.view.html'" class="col-md-6"></div>
-</div>
 
-<div class="row">
-    <div ng-include src="'/core/statistics/account/monthly-summary/chart.view.html'" class="col-md-6"></div>
-    <div ng-include src="'/core/statistics/transaction/most-expensive/list.html'" class="col-md-6"></div>
-</div>
